@@ -11,13 +11,21 @@ dotnet stryker --reporters "['json']" > mutation-result.txt
 ls
 VAR1="The final mutation score is 100.00 %"
 
-while read p; do
-  echo "$p"
-  if [[ $p == *"$VAR1"* ]]; then
-    echo "SUCESSO"
+cat mutation-result.txt
+
+result=1
+
+while IFS='' read -r line || [[ -n "$line" ]]; do
+  if [[ $line == *"$VAR1"* ]]; then
+    result=0
+    echo "SUCESSO, NAO RESTOU NENHUM MUTANTE"
     exit 0
   else
-    echo "FALHA"
-    exit 1
+    result=1
   fi
-done < mutation-result.txt
+done < mutationresult.txt
+
+if [[ $result == 1 ]]; then
+    echo "AINDA RESTAM MUTANTES VIVOS"
+  exit 1
+fi
