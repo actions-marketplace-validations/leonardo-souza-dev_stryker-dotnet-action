@@ -6,9 +6,9 @@ dotnet tool install -g dotnet-stryker
 dotnet tool restore
 
 cd *.Test/
-ls
-dotnet stryker --reporters "['json']" > mutation-result.txt
 
+dotnet stryker --reporters "['json']" > mutation-result.txt
+ls
 VAR1="The final mutation score is 100.00 %"
 
 while read p; do
