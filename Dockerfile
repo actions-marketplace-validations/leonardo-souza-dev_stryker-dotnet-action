@@ -3,6 +3,5 @@ WORKDIR /app
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-CMD ["ls"]
 
-ENTRYPOINT ["bash", "entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
