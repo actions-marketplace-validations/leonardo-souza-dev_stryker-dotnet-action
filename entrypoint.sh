@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 export PATH="$PATH:/github/home/.dotnet/tools"
 dotnet tool install -g dotnet-stryker
