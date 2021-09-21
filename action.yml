@@ -1,0 +1,8 @@
+name: Stryker .net
+description: GitHub Action para Testes de Mutação com Stryker .Net
+branding:
+  icon: 'activity'  
+  color: 'green'
+runs:
+  using: docker
+  image: Dockerfile
