@@ -23,7 +23,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
   else
     result=1
   fi
-done < mutationresult.txt
+done < mutation-result.txt
 
 if [[ $result == 1 ]]; then
     echo "AINDA RESTAM MUTANTES VIVOS"
